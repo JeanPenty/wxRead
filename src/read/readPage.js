@@ -20,10 +20,11 @@ import {LinearGradient} from "expo-linear-gradient"
 
 import {Card} from 'react-native-shadow-cards'
 
+let NavBarHeight = 0;
 if (Platform.OS === "ios"){
-    //
+    NavBarHeight = 80
 }else if (Platform.OS === "android"){
-    //
+    NavBarHeight = 50
 }
 
 const List = require('./testJson.json');
@@ -118,6 +119,7 @@ class ReadPage extends Component {
                             </View>
                             <View style={{flex:2, display:"flex"}}>
                                 <TouchableOpacity
+                                    onPress={this.onClickBookShelf}
                                     style={{flex:1, alignItems:"center", justifyContent:"center"}}
                                 >
                                     <Text>书城</Text>
@@ -127,6 +129,7 @@ class ReadPage extends Component {
                     </View>
                 </View>
                 <FlatList
+                    style={{marginBottom:NavBarHeight}}
                     data={this.state.data}
                     ListHeaderComponent={this._renderListHeader}
                     renderItem={this._renderItem}
@@ -217,7 +220,7 @@ class ReadPage extends Component {
         );
     }
     _renderItem = ({item, index}) => {
-        if (item.card_type === 0){
+        if (item.card_type === 0){//推荐书籍
 
             let text;
             if (item.friend_status === 0){
@@ -228,6 +231,8 @@ class ReadPage extends Component {
                 text = item.friend_count + "位朋友读完"
             }
 
+            let todayRead = item.today_read + "人今日在读";
+            let putValue = "推荐值" + item.put_value;
             return (
                 <Card
                     elevation={5}
@@ -244,7 +249,38 @@ class ReadPage extends Component {
                             <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}></Image>
                         </View>
                         <View style={{flex:1, display:"flex"}}>
-                            <View style={{flex:4}}></View>
+                            <View style={{flex:4, display:"flex"}}>
+                                <View style={{flex:2, alignItems:"center", justifyContent:"center"}}>
+                                    <Text
+                                        ellipsizeMode={"tail"}
+                                        numberOfLines={2}
+                                        style={{fontSize:18, fontWeight:"bold", marginLeft:20, marginRight:20, textAlign:"center"}}
+                                    >{(item.book_name)}</Text>
+                                </View>
+                                <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+                                    <Text
+                                        ellipsizeMode={"tail"}
+                                        numberOfLines={1}
+                                        style={{fontSize:16, marginLeft:20, marginRight:20, textAlign:"center", color:"#00000065"}}
+                                    >{(item.book_author)}</Text>
+                                </View>
+                                <View style={{flex:1, flexDirection:"row", display:"flex"}}>
+                                    <View style={{flex:1, alignItems:"flex-end", justifyContent:"center"}}>
+                                        <Text
+                                            style={{fontSize:14, textAlign:"center", color:"#00000065", marginRight:5}}
+                                        >{(todayRead)}</Text>
+                                    </View>
+                                    <View style={{flex:1, alignItems:"flex-start", justifyContent:"center"}}>
+                                        <Text
+                                            style={{fontSize:14, textAlign:"center", color:"#00000065", marginLeft:5}}
+                                        >{(putValue)}</Text>
+                                    </View>
+                                </View>
+                                <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+                                    {/*绘制图书徽章*/}
+                                    <Text>此处绘制徽章</Text>
+                                </View>
+                            </View>
                             <View style={{flex:1, backgroundColor:"#00000020", borderBottomLeftRadius:10, borderBottomRightRadius:10, display:"flex"}}>
                                 <TouchableOpacity
                                     style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"center"}}
@@ -257,6 +293,42 @@ class ReadPage extends Component {
                     </View>
                 </Card>
             );
+        }else if (item.card_type === 1){//体验卡活动
+            return (
+                <Card
+                    elevation={5}
+                    cornerRadius={10}
+                    opacity={0.1}
+                    style={{backgroundColor: "#fff",
+                        marginLeft:20,
+                        marginTop:15,
+                        width:width - 40,
+                        height:1.4*(width - 40),
+                    }}>
+                    <View style={{flex:1, display:"flex"}}>
+                        <View style={{flex:1, alignItems:"center",  justifyContent:"center"}}>
+                            <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}></Image>
+                        </View>
+                        <View style={{flex:1, display:"flex"}}>
+                            <View style={{flex:4}}></View>
+                            <View style={{flex:1, backgroundColor:"#00000020", borderBottomLeftRadius:10, borderBottomRightRadius:10, display:"flex"}}>
+                                <TouchableOpacity
+                                    style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"center"}}
+                                >
+
+                                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Card>
+            );
+        }else if (item.card_type === 2){//为你推荐
+            //
+        }else if (item.card_type === 3){//免费图书馆
+            //
+        }else if (item.card_type === 4){//今日书单
+            //
         }
     }
 
@@ -283,6 +355,10 @@ class ReadPage extends Component {
             //TODO:
             alert("听书")
         }
+    }
+
+    onClickBookShelf = () =>{
+        //TODO:点击书城
     }
 }
 
