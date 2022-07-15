@@ -18,6 +18,8 @@ const { width, height } = Dimensions.get("window");
 import CardView from 'react-native-cardview-wayne';
 import {LinearGradient} from "expo-linear-gradient"
 
+import {Card} from 'react-native-shadow-cards'
+
 if (Platform.OS === "ios"){
     //
 }else if (Platform.OS === "android"){
@@ -45,28 +47,46 @@ class ReadPage extends Component {
 
     renderBtn(index, value){
         return (
-            <TouchableOpacity
-                onPress={this.btnClick.bind(this, index, value)}
-                style={{flexDirection:"row",width:60, height:35, alignItems:"center", backgroundColor: "#00000010", borderRadius:18, marginLeft:15}}>
-                <Text style={{fontSize:14, marginLeft:9}}>{(value)}</Text>
-                <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
-            </TouchableOpacity>
+            <Card
+                elevation={1}
+                cornerRadius={17}
+                opacity={0.2}
+                style={{width:80,
+                    height:35,
+                    backgroundColor: "#fff",
+                    alignItems:"center",
+                    justifyContent:"center",
+                    marginLeft:15,
+                    display:"flex",
+            }}>
+                <TouchableOpacity
+                    onPress={this.btnClick.bind(this, index, value)}
+                    style={{flexDirection:"row", flex:1, alignItems:"center", justifyContent:"center"}}>
+                    <Text style={{fontSize:14,}}>{(value)}</Text>
+                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
+                </TouchableOpacity>
+            </Card>
         );
     }
 
     renderBookCard(index, item){
         return (
-            <CardView
-                cardElevation={4}
-                maxCardElevation={4}
-                radius={10}
-                backgroundColor={'#fff'}
-                style={{marginLeft:15, width:80, height:110,  alignItems:"center", justifyContent:"center", display:"flex"}}
-            >
+            <Card
+                elevation={4}
+                cornerRadius={10}
+                opacity={0.2}
+                style={{width:80,
+                    height:110,
+                    backgroundColor: "#fff",
+                    alignItems:"center",
+                    justifyContent:"center",
+                    marginLeft:15,
+                    display:"flex",
+                }}>
                 <ImageBackground
                     source={require("../../assets/WechatIMG278.jpeg")}
-                    style={{width:80, height:110, borderRadius:10}}></ImageBackground>
-            </CardView>
+                    style={{flex:1,width:80, height:110, borderRadius:10}}></ImageBackground>
+            </Card>
         );
     }
 
@@ -77,7 +97,7 @@ class ReadPage extends Component {
                     <View style={{flex:1.5}}></View>
                     <View style={{flex:3.5, display:"flex", alignItems:"center", justifyContent:"center"}}>
                         <View
-                            style={{width:width - 60, height:40, borderRadius:20, backgroundColor:"#00000010", display:"flex", flexDirection:"row"}}
+                            style={{width:width - 40, height:40, borderRadius:20, backgroundColor:"#00000010", display:"flex", flexDirection:"row"}}
                         >
                             <View style={{flex:1, display:"flex", alignItems:"center", justifyContent:"center"}}>
                                 <Image
@@ -129,28 +149,41 @@ class ReadPage extends Component {
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                     >
-                        <TouchableOpacity style={{flexDirection:"row", width:120, height:35, alignItems:"center", backgroundColor: "#df846e10", borderRadius:18, marginLeft:30}}>
-                            <Text style={{fontSize:14, color:"#df846e", marginLeft:9}}>暑期年卡特惠</Text>
-                            <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
-                        </TouchableOpacity>
+                        <Card
+                            elevation={3}
+                            cornerRadius={17}
+                            opacity={0.2}
+                            style={{width:120, height:35, display:"flex", marginLeft:20}}
+                        >
+                            <TouchableOpacity
+                                style={{flexDirection:"row", flex:1, alignItems:"center", justifyContent:"center"}}>
+                                <Text style={{fontSize:14, color:"#df846e", }}>暑期年卡特惠</Text>
+                                <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
+                            </TouchableOpacity>
+                        </Card>
                         {this.state.btnDate.map((value, index) => this.renderBtn(index, value))}
                     </ScrollView>
                 </View>
                 <View
-                    style={{ width:width, height:120, display:"flex", marginTop:10}}
+                    style={{ width:width, height:120, display:"flex", marginTop:15}}
                 >
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                     >
-                        <CardView
-                            cardElevation={4}
-                            maxCardElevation={4}
-                            radius={10}
-                            backgroundColor={'#fff'}
-                            style={{marginLeft:30, width:120, height:110,  alignItems:"center", justifyContent:"center", display:"flex"}}
-                        >
+                        <Card
+                            elevation={4}
+                            cornerRadius={10}
+                            opacity={0.2}
+                            style={{width:120,
+                                height:110,
+                                backgroundColor: "#fff",
+                                alignItems:"center",
+                                justifyContent:"center",
+                                marginLeft:20,
+                                display:"flex",
+                            }}>
                             <TouchableOpacity
                                 onPress={()=>{alert("111")}}
                                 style={{width:120, height:110, display:"flex"}}>
@@ -168,7 +201,7 @@ class ReadPage extends Component {
                                     <Text style={{fontSize:13, color:"#5a3d1a"}}>{(days)}</Text>
                                 </LinearGradient>
                             </TouchableOpacity>
-                        </CardView>
+                        </Card>
                         {this.state.bookDate.map((value, index) => this.renderBookCard(index, value))}
                     </ScrollView>
                 </View>
@@ -196,13 +229,16 @@ class ReadPage extends Component {
             }
 
             return (
-                <CardView
-                    cardElevation={4}
-                    maxCardElevation={4}
-                    radius={10}
-                    backgroundColor={'#fff'}
-                    style={{marginLeft:20, width:width - 40, height:1.4*(width - 40),  marginTop:10}}
-                >
+                <Card
+                    elevation={5}
+                    cornerRadius={10}
+                    opacity={0.1}
+                    style={{backgroundColor: "#fff",
+                        marginLeft:20,
+                        marginTop:15,
+                        width:width - 40,
+                        height:1.4*(width - 40),
+                }}>
                     <View style={{flex:1, display:"flex"}}>
                         <View style={{flex:1, alignItems:"center",  justifyContent:"center"}}>
                             <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}></Image>
@@ -219,7 +255,7 @@ class ReadPage extends Component {
                             </View>
                         </View>
                     </View>
-                </CardView>
+                </Card>
             );
         }
     }
