@@ -12,26 +12,16 @@
       "friend_status": 0
     },
     {
-      "card_type": 0,
-      "book_image": "",
-      "book_name": "",
-      "book_author": "",
-      "today_read": 166,
-      "put_value": "66%",
-      "book_label": 0,
-      "friend_count": 10,
-      "friend_status": 0
+      "card_type": 1,
     },
     {
-      "card_type": 1,
-      "book_image": "",
-      "book_name": "",
-      "book_author": "",
-      "today_read": 166,
-      "put_value": "66%",
-      "book_label": 0,
-      "friend_count": 10,
-      "friend_status": 0
+      "card_type": 2,
+    },
+    {
+      "card_type": 3,
+    },
+    {
+      "card_type": 4,
     }
   ]
 }

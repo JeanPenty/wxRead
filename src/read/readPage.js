@@ -15,9 +15,7 @@ import {
 import {Dimensions} from 'react-native'
 const { width, height } = Dimensions.get("window");
 
-import CardView from 'react-native-cardview-wayne';
 import {LinearGradient} from "expo-linear-gradient"
-
 import {Card} from 'react-native-shadow-cards'
 
 let NavBarHeight = 0;
@@ -48,25 +46,12 @@ class ReadPage extends Component {
 
     renderBtn(index, value){
         return (
-            <Card
-                elevation={1}
-                cornerRadius={17}
-                opacity={0.2}
-                style={{width:80,
-                    height:35,
-                    backgroundColor: "#fff",
-                    alignItems:"center",
-                    justifyContent:"center",
-                    marginLeft:15,
-                    display:"flex",
-            }}>
-                <TouchableOpacity
-                    onPress={this.btnClick.bind(this, index, value)}
-                    style={{flexDirection:"row", flex:1, alignItems:"center", justifyContent:"center"}}>
-                    <Text style={{fontSize:14,}}>{(value)}</Text>
-                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
-                </TouchableOpacity>
-            </Card>
+            <TouchableOpacity
+                onPress={this.btnClick.bind(this, index, value)}
+                style={{flexDirection:"row", width:70, height:35, borderRadius:17, marginLeft:15, alignItems:"center", justifyContent:"center", backgroundColor:"#00000010"}}>
+                <Text style={{fontSize:14,color:"rgba(0,0,0,1)", fontWeight:"bold"}}>{(value)}</Text>
+                <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:5}}/>
+            </TouchableOpacity>
         );
     }
 
@@ -86,7 +71,7 @@ class ReadPage extends Component {
                 }}>
                 <ImageBackground
                     source={require("../../assets/WechatIMG278.jpeg")}
-                    style={{flex:1,width:80, height:110, borderRadius:10}}></ImageBackground>
+                    style={{flex:1,width:80, height:110, borderRadius:10}}/>
             </Card>
         );
     }
@@ -95,7 +80,7 @@ class ReadPage extends Component {
         return (
             <View style={styles.body}>
                 <View style={{width:width, height:100, display:"flex"}}>
-                    <View style={{flex:1.5}}></View>
+                    <View style={{flex:1.5}}/>
                     <View style={{flex:3.5, display:"flex", alignItems:"center", justifyContent:"center"}}>
                         <View
                             style={{width:width - 40, height:40, borderRadius:20, backgroundColor:"#00000010", display:"flex", flexDirection:"row"}}
@@ -103,7 +88,7 @@ class ReadPage extends Component {
                             <View style={{flex:1, display:"flex", alignItems:"center", justifyContent:"center"}}>
                                 <Image
                                     source={require("../../assets/icons/search.png")}
-                                    style={{width:30, height:30}}></Image>
+                                    style={{width:30, height:30}}/>
                             </View>
                             <View style={{flex:6, display:"flex",}}>
                                 <TextInput
@@ -122,7 +107,7 @@ class ReadPage extends Component {
                                     onPress={this.onClickBookShelf}
                                     style={{flex:1, alignItems:"center", justifyContent:"center"}}
                                 >
-                                    <Text>书城</Text>
+                                    <Text style={{fontWeight:"bold"}}>书城</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -134,7 +119,7 @@ class ReadPage extends Component {
                     ListHeaderComponent={this._renderListHeader}
                     renderItem={this._renderItem}
                     ListEmptyComponent={this._renderListEmpty}
-                ></FlatList>
+                />
             </View>
         );
     }
@@ -152,18 +137,11 @@ class ReadPage extends Component {
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
                     >
-                        <Card
-                            elevation={3}
-                            cornerRadius={17}
-                            opacity={0.2}
-                            style={{width:120, height:35, display:"flex", marginLeft:20}}
-                        >
-                            <TouchableOpacity
-                                style={{flexDirection:"row", flex:1, alignItems:"center", justifyContent:"center"}}>
-                                <Text style={{fontSize:14, color:"#df846e", }}>暑期年卡特惠</Text>
-                                <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
-                            </TouchableOpacity>
-                        </Card>
+                        <TouchableOpacity
+                            style={{flexDirection:"row", width:120, height:35, alignItems:"center", justifyContent:"center", backgroundColor:"#df846e20", borderRadius:17, marginLeft:20}}>
+                            <Text style={{fontSize:14, color:"#df846e", fontWeight:"bold"}}>暑期年卡特惠</Text>
+                            <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}/>
+                        </TouchableOpacity>
                         {this.state.btnDate.map((value, index) => this.renderBtn(index, value))}
                     </ScrollView>
                 </View>
@@ -191,7 +169,7 @@ class ReadPage extends Component {
                                 onPress={()=>{alert("111")}}
                                 style={{width:120, height:110, display:"flex"}}>
                                 <View style={{flex:3, borderTopLeftRadius:10, borderTopRightRadius:10, flexDirection:"row", alignItems:"center"}}>
-                                    <Image source={require("../../assets/icons/last.png")} style={{width:15, height:15, marginLeft:5}}></Image>
+                                    <Image source={require("../../assets/icons/last.png")} style={{width:15, height:15, marginLeft:5}}/>
                                     <Text style={{fontSize:12, marginLeft:2, color:"#daa351"}}>本周阅读 </Text>
                                     <Text style={{fontSize:14, color:"#ff000090"}}>{(this.state.week_day)}</Text>
                                     <Text style={{fontSize:12, color:"#daa351"}}> 天</Text>
@@ -240,13 +218,13 @@ class ReadPage extends Component {
                     opacity={0.1}
                     style={{backgroundColor: "#fff",
                         marginLeft:20,
-                        marginTop:15,
+                        marginTop:10,
                         width:width - 40,
                         height:1.4*(width - 40),
                 }}>
                     <View style={{flex:1, display:"flex"}}>
                         <View style={{flex:1, alignItems:"center",  justifyContent:"center"}}>
-                            <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}></Image>
+                            <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}/>
                         </View>
                         <View style={{flex:1, display:"flex"}}>
                             <View style={{flex:4, display:"flex"}}>
@@ -270,7 +248,7 @@ class ReadPage extends Component {
                                             style={{fontSize:14, textAlign:"center", color:"#00000065", marginRight:5}}
                                         >{(todayRead)}</Text>
                                     </View>
-                                    <View style={{flex:1, alignItems:"flex-start", justifyContent:"center"}}>
+                                    <View style={{flex:1, alignItems:"flex-start", justifyContent:"center", borderLeftWidth:1, borderColor:"#00000010"}}>
                                         <Text
                                             style={{fontSize:14, textAlign:"center", color:"#00000065", marginLeft:5}}
                                         >{(putValue)}</Text>
@@ -286,7 +264,7 @@ class ReadPage extends Component {
                                     style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"center"}}
                                 >
                                     <Text style={{fontSize:14, color:"#8a8a8a"}}>{(text)}</Text>
-                                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
+                                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}/>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -299,24 +277,31 @@ class ReadPage extends Component {
                     elevation={5}
                     cornerRadius={10}
                     opacity={0.1}
-                    style={{backgroundColor: "#fff",
+                    style={{backgroundColor: "#6e7678",
                         marginLeft:20,
                         marginTop:15,
                         width:width - 40,
                         height:1.4*(width - 40),
                     }}>
                     <View style={{flex:1, display:"flex"}}>
-                        <View style={{flex:1, alignItems:"center",  justifyContent:"center"}}>
-                            <Image source={require("../../assets/WechatIMG280.jpeg")} style={{width:150, height:200}}></Image>
+                        <View style={{flex:3, display:"flex", borderTopLeftRadius:10, borderTopRightRadius:10}}>
+                            <View style={{flex:3, alignItems:"center", justifyContent:"center"}}>
+                                <Text style={{fontSize:30, color:"#fff"}}>集赞获得12天体验卡</Text>
+                            </View>
+                            <View style={{flex:1, alignItems:"center", justifyContent:"flex-start"}}>
+                                <Text style={{fontSize:16, color:"#fff"}}>朋友点赞后即可获得</Text>
+                            </View>
                         </View>
-                        <View style={{flex:1, display:"flex"}}>
-                            <View style={{flex:4}}></View>
-                            <View style={{flex:1, backgroundColor:"#00000020", borderBottomLeftRadius:10, borderBottomRightRadius:10, display:"flex"}}>
+                        <View style={{flex:7, display:"flex"}}>
+                            <View style={{flex:3, alignItems:"center", justifyContent:"center"}}>
+                                <Image source={require("../../assets/tyk.png")}
+                                       style={{width:width - 100, height:(width - 60)/2, borderRadius:10}}></Image>
+                            </View>
+                            <View style={{flex:1, alignItems:"center",  justifyContent:"center"}}>
                                 <TouchableOpacity
-                                    style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"center"}}
+                                    style={{width:width  - 100, height:50, backgroundColor:"#9ea1a4",  borderRadius:10,  alignItems:"center", justifyContent:"center"}}
                                 >
-
-                                    <Image source={require("../../assets/icons/arrow-right.png")} style={{width:10, height:15, marginLeft:1}}></Image>
+                                    <Text style={{fontSize:18, color:"#ffffff"}}>立即获得</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -324,11 +309,104 @@ class ReadPage extends Component {
                 </Card>
             );
         }else if (item.card_type === 2){//为你推荐
-            //
+            return (
+                <Card
+                    elevation={5}
+                    cornerRadius={10}
+                    opacity={0.1}
+                    style={{backgroundColor: "#fff",
+                        marginLeft:20,
+                        marginTop:15,
+                        width:width - 40,
+                        height:1.4*(width - 40),
+                    }}>
+                    <View style={{flex:1, display:"flex"}}>
+                        <View style={{flex:3, display:"flex", borderTopLeftRadius:10, borderTopRightRadius:10}}>
+                            <View style={{flex:2, alignItems:"center", justifyContent:"center"}}>
+                                <Text style={{fontSize:30, color:"#000"}}>为你推荐</Text>
+                            </View>
+                            <View style={{flex:1, alignItems:"center", justifyContent:"flex-start"}}>
+                                <Text style={{fontSize:14, color:"#00000085"}}>基于你的阅读历史计算 · 每日更新</Text>
+                            </View>
+                        </View>
+                        <View style={{flex:7, display:"flex"}}>
+                            <View style={{flex:4, display:"flex"}}>
+                                <View style={{alignItems:"center", justifyContent:"center", flex:1, margin:10, backgroundColor:"#f00"}}>
+                                    <Text>此处以3*2的格式展示推荐的书籍</Text>
+                                </View>
+                            </View>
+                            <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+                                <TouchableOpacity
+                                    style={{width:width  - 100, height:50, backgroundColor:"#f5f7f6",  borderRadius:10,  alignItems:"center", justifyContent:"center"}}
+                                >
+                                    <Text style={{fontSize:18, color:"#00f"}}>换一批</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Card>
+            );
         }else if (item.card_type === 3){//免费图书馆
-            //
+            return (
+                <Card
+                    elevation={5}
+                    cornerRadius={10}
+                    opacity={0.1}
+                    style={{backgroundColor: "#fff",
+                        marginLeft:20,
+                        marginTop:15,
+                        width:width - 40,
+                        height:1.4*(width - 40),
+                    }}>
+                    <View style={{flex:1, display:"flex"}}>
+                        <View style={{flex:1, display:"flex", flexDirection:"row"}}>
+                            <View style={{flex:2, alignItems:"center",  justifyContent:"center"}}>
+                                <Text style={{fontSize:24, color:"#000"}}>免费图书馆</Text>
+                            </View>
+                            <View style={{flex:3, alignItems:"center", justifyContent:"center"}}>
+                                <Text>7月第2期已更新 · 每周更新</Text>
+                            </View>
+                        </View>
+                        <View style={{flex:3, display:"flex"}}>
+                            <View style={{alignItems:"center", justifyContent:"center", flex:1, margin:10, backgroundColor:"#f00"}}>
+                                <Text>此处以3*2的格式展示推荐的书籍</Text>
+                            </View>
+                        </View>
+                        <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+                            <TouchableOpacity
+                                style={{width:width  - 100, height:50, backgroundColor:"#118bef",  borderRadius:10,  alignItems:"center", justifyContent:"center"}}
+                            >
+                                <Text style={{fontSize:18, color:"#fff"}}>本期可免费获得 18 本书</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Card>
+            );
         }else if (item.card_type === 4){//今日书单
-            //
+            return (
+                <Card
+                    elevation={5}
+                    cornerRadius={10}
+                    opacity={0.1}
+                    style={{backgroundColor: "#fff",
+                        marginLeft:20,
+                        marginTop:15,
+                        width:width - 40,
+                        height:1.4*(width - 40),
+                    }}>
+                    <View style={{flex:1, display:"flex"}}>
+                        <View style={{flex:2}}></View>
+                        <View style={{flex:2}}></View>
+                        <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
+                            <TouchableOpacity
+                                style={{width:width  - 100, height:50, backgroundColor:"#f5f7f6",  borderRadius:10,  alignItems:"center", justifyContent:"center"}}
+                            >
+                                <Text style={{fontSize:18, color:"#00f"}}>查看全部 · 29本书</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Card>
+            );
         }
     }
 
