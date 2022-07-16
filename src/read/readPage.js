@@ -66,12 +66,16 @@ class ReadPage extends Component {
                     backgroundColor: "#fff",
                     alignItems:"center",
                     justifyContent:"center",
-                    marginLeft:15,
+                    marginLeft:20,
                     display:"flex",
                 }}>
-                <ImageBackground
-                    source={require("../../assets/WechatIMG278.jpeg")}
-                    style={{flex:1,width:80, height:110, borderRadius:10}}/>
+                <TouchableOpacity
+                    onPress={() =>{alert(index)}}
+                >
+                    <Image
+                        source={require("../../assets/WechatIMG278.jpeg")}
+                        style={{flex:1,width:80, height:110, borderRadius:10}}/>
+                </TouchableOpacity>
             </Card>
         );
     }
@@ -104,7 +108,7 @@ class ReadPage extends Component {
                             </View>
                             <View style={{flex:2, display:"flex"}}>
                                 <TouchableOpacity
-                                    onPress={this.onClickBookShelf}
+                                    onPress={this.onClickBookStore}
                                     style={{flex:1, alignItems:"center", justifyContent:"center"}}
                                 >
                                     <Text style={{fontWeight:"bold"}}>书城</Text>
@@ -413,30 +417,38 @@ class ReadPage extends Component {
     btnClick(index, value) {
         if (value === "分类"){
             //TODO:跳转至分类
-            alert("分类")
+            //alert("分类")
+            this.props.navigation.navigate("classify")
         }else if (value === "榜单"){
             //TODO:跳转至分类
-            alert("榜单")
+            //alert("榜单")
+            this.props.navigation.navigate("topList")
         }else if (value === "书单"){
             //TODO:
-            alert("书单")
+            //alert("书单")
+            this.props.navigation.navigate("bookList")
         }else if (value === "会员"){
             //TODO:
-            alert("会员")
+            //alert("会员")
+            this.props.navigation.navigate("vip")
         }else if (value === "免费"){
             //TODO:
-            alert("免费")
+            //alert("免费")
+            this.props.navigation.navigate("free")
         }else if (value === "新书"){
             //TODO:
-            alert("新书")
+            //alert("新书")
+            this.props.navigation.navigate("newBook")
         }else if (value === "听书"){
             //TODO:
-            alert("听书")
+            //alert("听书")
+            this.props.navigation.navigate("listenBook")
         }
     }
 
-    onClickBookShelf = () =>{
+    onClickBookStore = () =>{
         //TODO:点击书城
+        this.props.navigation.navigate("book_store")
     }
 }
 
