@@ -216,23 +216,28 @@ class FoundPage extends Component {
     }
 
     onClickFriendMind  = () =>{
-        alert("朋友的想法")
+        //alert("朋友的想法")
+        this.props.navigation.navigate("found_friend_mind")
     }
 
     onClickCircle = () =>{
-        alert("小圈子 ")
+        //alert("小圈子 ")
+        this.props.navigation.navigate("found_circle")
     }
 
     onClickVip  = () =>{
-        alert("付费会员专享")
+        //alert("付费会员专享")
+        this.props.navigation.navigate("found_vip")
     }
 
     onClickFreeGetBook  = () =>{
-        alert("免费领书")
+        //alert("免费领书")
+        this.props.navigation.navigate("found_free")
     }
 
     onClickWellBeing  = () =>{
-        alert("福利场")
+        //alert("福利场")
+        this.props.navigation.navigate("found_well_being")
     }
 
     onClickExChange  = () =>{

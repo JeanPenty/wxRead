@@ -16,6 +16,12 @@ import VipPage from "./src/read/vipPage";
 import ClassifyPage from "./src/read/classifyPage";
 import NewBookPage from "./src/read/newBookPage";
 import ListenBookPage from "./src/read/listenBookPage";
+
+import FriendMindPage from "./src/found/friendMindPage";
+import CirclePage from "./src/found/circlePage";
+import FoundVipPage from "./src/found/VipPage";
+import FoundFreePage from "./src/found/freePage";
+import WellBeingPage from "./src/found/wellBeingPage";
 function Home() {
     return (
         <AppNavigator/>
@@ -66,6 +72,27 @@ export default function App() {
               }}/>
               <Stack.Screen name="listenBook" component={ListenBookPage} options={{
                   title:"听书",
+                  headerBackTitle:'返回',
+              }}/>
+
+              <Stack.Screen name="found_friend_mind" component={FriendMindPage} options={{
+                  title:"朋友的想法",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="found_circle" component={CirclePage} options={{
+                  title:"小圈子",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="found_vip" component={FoundVipPage} options={{
+                  title:"付费会员专享",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="found_free" component={FoundFreePage} options={{
+                  title:"免费领书",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="found_well_being" component={WellBeingPage} options={{
+                  title:"福利场",
                   headerBackTitle:'返回',
               }}/>
           </Stack.Navigator>

@@ -36,6 +36,7 @@ class MinePage extends Component {
 
             readFinish:4,
             readingCount:41,
+
             name:"0xFFFFFFFF",
         }
     }
