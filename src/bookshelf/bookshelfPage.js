@@ -38,7 +38,7 @@ class BookshelfPage extends Component {
                             </View>
                             <View style={{flex:2, display:"flex"}}>
                                 <TouchableOpacity
-                                    onPress={this.onClickBookShelf}
+                                    onPress={this.onClickBookAdd}
                                     style={{flex:1, alignItems:"flex-end", justifyContent:"center", marginRight:15}}
                                 >
                                     <Image source={require("../../assets/icons/add.png")} style={{width:20, height:20}}></Image>
@@ -47,8 +47,16 @@ class BookshelfPage extends Component {
                         </View>
                     </View>
                 </View>
+                <View style={{width:width, height:40, borderBottomWidth:1, borderColor:"#00000010", display:"flex",  flexDirection:"row"}}>
+                    <View style={{flex:1}}></View>
+                    <View style={{flex:1}}></View>
+                </View>
             </View>
         );
+    }
+
+    onClickBookAdd = () =>{
+        alert("add");
     }
 }
 
@@ -59,5 +67,6 @@ const styles = StyleSheet.create({
     body:{
         width:width,
         height:height,
+        backgroundColor:"#f1f3f5"
     }
 })

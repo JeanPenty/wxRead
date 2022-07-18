@@ -26,7 +26,7 @@ class FoundPage extends Component {
             <View style={styles.body}>
                 <View style={{width:width, height:100, display:"flex"}}>
                     <View style={{flex:2}}>{/*占位*/}</View>
-                    <View style={{flex:3, flexDirection:"row", display:"flex"}}>
+                    <View style={{flex:3, flexDirection:"row", display:"flex", borderBottomWidth:1, borderColor:"#00000010"}}>
                         <View style={{flex:1}}></View>
                         <View style={{flex:2, alignItems:"center", justifyContent:"center"}}>
                             <Text style={{fontSize:18, fontWeight:"bold"}}>发现</Text>
