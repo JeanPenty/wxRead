@@ -47,11 +47,15 @@ class MinePage extends Component {
                 <View style={{width:width, height:80, display:"flex", borderBottomWidth:1, borderColor:"#00000010"}}>
                     <View style={{flex:2}}>{/*占位*/}</View>
                     <View style={{flex:3, flexDirection:"row", display:"flex"}}>
-                        <TouchableOpacity style={{flex:1, display:"flex", alignItems:"center", justifyContent:"flex-start", flexDirection:"row"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickNotice}
+                            style={{flex:1, display:"flex", alignItems:"center", justifyContent:"flex-start", flexDirection:"row"}}>
                             <Image source={require("../../assets/icons/mail.png")} style={{width:30, height:20, marginLeft:15}}></Image>
                             <Text style={{marginLeft:5}}>{(this.state.mailCount)}</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flex:1, display:"flex", justifyContent:"center", alignItems:"flex-end"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickSetting}
+                            style={{flex:1, display:"flex", justifyContent:"center", alignItems:"flex-end"}}>
                             <Image source={require("../../assets/icons/setting.png")} style={{width:30, height:30, marginRight:15}}></Image>
                         </TouchableOpacity>
                     </View>
@@ -71,18 +75,24 @@ class MinePage extends Component {
                             <View style={{flex:2, justifyContent:"center"}}>
                                 <Text style={{fontSize:24, fontWeight:"bold"}}>{(this.state.name)}</Text>
                             </View>
-                            <TouchableOpacity style={{flex:1}}>
+                            <TouchableOpacity
+                                onPress={this.onClickEditor}
+                                style={{flex:1}}>
                                 <Text style={{color:"#00000045"}}>编辑个人资料</Text>
                             </TouchableOpacity>
                         </View>
-                        <TouchableOpacity style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginLeft:15}}>
+                        <TouchableOpacity
+                            onPress={this.onClickMain}
+                            style={{flex:1, flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginLeft:15}}>
                             <Text style={{color:"#00000085"}}>主页</Text>
                             <Image source={require("../../assets/icons/arrow-right.png")} style={{width:12, height:24, marginLeft:5}}></Image>
                         </TouchableOpacity>
                     </View>
 
                     <View style={{width:width - 30, height:160, backgroundColor: "#fff", display:"flex", borderRadius:10, marginTop:20, marginLeft:15}}>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickAccount}
+                            style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/acc.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>账户</Text>
@@ -97,7 +107,9 @@ class MinePage extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickVip}
+                            style={{flex:1, display:"flex", flexDirection:"row"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/icons/fufei.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>付费会员卡</Text>
@@ -113,7 +125,9 @@ class MinePage extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{width:width - 30, height:160, backgroundColor: "#fff", display:"flex", marginTop:20, marginLeft:15, borderRadius:10}}>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickReadSort}
+                            style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/sortlist.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>读书排行榜</Text>
@@ -129,7 +143,9 @@ class MinePage extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickFollow}
+                            style={{flex:1, display:"flex", flexDirection:"row"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/follow.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>关注</Text>
@@ -146,7 +162,9 @@ class MinePage extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{width:width - 30, height:240, backgroundColor: "#fff", display:"flex", borderRadius:10, marginTop:20, marginLeft:15}}>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickMedal}
+                            style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/xunzhang.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>勋章</Text>
@@ -161,7 +179,9 @@ class MinePage extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickNote}
+                            style={{flex:1, display:"flex", flexDirection:"row", borderBottomWidth:1, borderColor:"#00000010"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/note.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>笔记</Text>
@@ -173,7 +193,9 @@ class MinePage extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{flex:1, display:"flex", flexDirection:"row"}}>
+                        <TouchableOpacity
+                            onPress={this.onClickReadRecord}
+                            style={{flex:1, display:"flex", flexDirection:"row"}}>
                             <View style={{flex:1, flexDirection:"row", alignItems:"center"}}>
                                 <Image source={require("../../assets/mine/jilu.png")}  style={{width:24, height:24, marginLeft:15}}></Image>
                                 <Text style={{fontSize:16, fontWeight:"bold", marginLeft:10}}>阅读记录和订阅</Text>
@@ -195,16 +217,48 @@ class MinePage extends Component {
         );
     }
 
+    onClickEditor = () =>{
+        //
+    }
     onClickNotice = () =>{
         //
+        this.props.navigation.navigate("mine_notice")
     }
-
     onClickSetting = () =>{
         //
+        this.props.navigation.navigate("mine_setting")
     }
-
     onClickMain = () =>{
         //
+        this.props.navigation.navigate("mine_main")
+    }
+    onClickAccount = () =>{
+        //
+        this.props.navigation.navigate("mine_account")
+    }
+    onClickVip = () =>{
+        //
+        this.props.navigation.navigate("mine_vip")
+    }
+    onClickReadSort = () =>{
+        //
+        this.props.navigation.navigate("mine_read_sort")
+    }
+    onClickFollow = () =>{
+        //
+        this.props.navigation.navigate("mine_follow")
+    }
+    onClickMedal = () =>{
+        //
+        this.props.navigation.navigate("mine_medal")
+    }
+    onClickNote = () =>{
+        //
+        this.props.navigation.navigate("mine_note")
+    }
+    onClickReadRecord = ()  =>{
+        //
+        this.props.navigation.navigate("mine_read_record")
     }
 }
 

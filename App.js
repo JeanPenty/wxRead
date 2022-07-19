@@ -127,7 +127,7 @@ export default function App() {
                   title:"付费会员卡",
                   headerBackTitle:'返回',
               }}/>
-              <Stack.Screen name="mine_sort" component={MineReadSortPage} options={{
+              <Stack.Screen name="mine_read_sort" component={MineReadSortPage} options={{
                   title:"读书排行榜",
                   headerBackTitle:'返回',
               }}/>
