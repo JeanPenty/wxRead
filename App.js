@@ -22,6 +22,17 @@ import CirclePage from "./src/found/circlePage";
 import FoundVipPage from "./src/found/VipPage";
 import FoundFreePage from "./src/found/freePage";
 import WellBeingPage from "./src/found/wellBeingPage";
+
+import MineNoticePage from "./src/mine/mineNoticePage";
+import MineSettingPage from "./src/mine/mineSettingPage";
+import MineMainPage from "./src/mine/mineMainPage";
+import MineAccPage from "./src/mine/mineAccPage";
+import MineVipPage from "./src/mine/mineVipPage";
+import MineReadSortPage from "./src/mine/mineReadSortPage";
+import MineFollowPage from "./src/mine/mineFollowPage";
+import MineMedalPage from "./src/mine/mineMedalPage";
+import MineNotePage from "./src/mine/mineNotePage";
+import MineReadRecordPage from "./src/mine/mineReadRecordPage";
 function Home() {
     return (
         <AppNavigator/>
@@ -93,6 +104,47 @@ export default function App() {
               }}/>
               <Stack.Screen name="found_well_being" component={WellBeingPage} options={{
                   title:"福利场",
+                  headerBackTitle:'返回',
+              }}/>
+
+              <Stack.Screen name="mine_notice" component={MineNoticePage} options={{
+                  title:"通知",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_setting" component={MineSettingPage} options={{
+                  title:"设置",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_main" component={MineMainPage} options={{
+                  title:"主页",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_account" component={MineAccPage} options={{
+                  title:"账户",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_vip" component={MineVipPage} options={{
+                  title:"付费会员卡",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_sort" component={MineReadSortPage} options={{
+                  title:"读书排行榜",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_follow" component={MineFollowPage} options={{
+                  title:"关注",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_medal" component={MineMedalPage} options={{
+                  title:"勋章",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_note" component={MineNotePage} options={{
+                  title:"笔记",
+                  headerBackTitle:'返回',
+              }}/>
+              <Stack.Screen name="mine_read_record" component={MineReadRecordPage} options={{
+                  title:"阅读记录和订阅",
                   headerBackTitle:'返回',
               }}/>
           </Stack.Navigator>

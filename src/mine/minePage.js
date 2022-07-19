@@ -52,7 +52,7 @@ class MinePage extends Component {
                             <Text style={{marginLeft:5}}>{(this.state.mailCount)}</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={{flex:1, display:"flex", justifyContent:"center", alignItems:"flex-end"}}>
-                            <Image source={require("../../assets/icons/lianjie.png")} style={{width:30, height:30, marginRight:15}}></Image>
+                            <Image source={require("../../assets/icons/setting.png")} style={{width:30, height:30, marginRight:15}}></Image>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -193,6 +193,18 @@ class MinePage extends Component {
                 </ScrollView>
             </View>
         );
+    }
+
+    onClickNotice = () =>{
+        //
+    }
+
+    onClickSetting = () =>{
+        //
+    }
+
+    onClickMain = () =>{
+        //
     }
 }
 
