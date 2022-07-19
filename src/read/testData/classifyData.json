@@ -1,0 +1,178 @@
+{
+  "data": [
+    {
+      "type": "1",
+      "title": "玄幻精品",
+      "image": "",
+      "book_count": 1430
+    },
+    {
+      "type": "2",
+      "title": "政治军事",
+      "image": "",
+      "book_count": 6464
+    },
+    {
+      "type": "3",
+      "title": "精品小说",
+      "image": "",
+      "book_count": 21677
+    },
+    {
+      "type": "4",
+      "title": "会员专享",
+      "image": "",
+      "book_count": 14565
+    },
+    {
+      "type": "5",
+      "title": "文学",
+      "image": "",
+      "book_count": 24606
+    },
+    {
+      "type": "6",
+      "title": "历史",
+      "image": "",
+      "book_count": 22111
+    },
+    {
+      "type": "7",
+      "title": "经济理财",
+      "image": "",
+      "book_count": 21704
+    },
+    {
+      "type": "8",
+      "title": "社会小说",
+      "image": "",
+      "book_count": 5234
+    },
+    {
+      "type": "9",
+      "title": "悬疑推理",
+      "image": "",
+      "book_count": 3369
+    },
+    {
+      "type": "10",
+      "title": "哲学宗教",
+      "image": "",
+      "book_count": 4543
+    },
+    {
+      "type": "11",
+      "title": "心理",
+      "image": "",
+      "book_count": 3305
+    },
+    {
+      "type": "12",
+      "title": "影视原著",
+      "image": "",
+      "book_count": 627
+    },
+    {
+      "type": "13",
+      "title": "社会文化",
+      "image": "",
+      "book_count": 18894
+    },
+    {
+      "type": "14",
+      "title": "人物传记",
+      "image": "",
+      "book_count": 4659
+    },
+    {
+      "type": "15",
+      "title": "情感小说",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "16",
+      "title": "个人成长",
+      "image": "",
+      "book_count": 6349
+    },
+    {
+      "type": "17",
+      "title": "世界名著",
+      "image": "",
+      "book_count": 1511
+    },
+    {
+      "type": "18",
+      "title": "生活百科",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "19",
+      "title": "科幻经典",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "20",
+      "title": "医学健康",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "21",
+      "title": "教育学习",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "22",
+      "title": "计算机",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "23",
+      "title": "科学科技",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "24",
+      "title": "艺术",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "25",
+      "title": "童书",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "26",
+      "title": "期刊专栏",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "27",
+      "title": "原版书",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "28",
+      "title": "男生小说",
+      "image": "",
+      "book_count": 5171
+    },
+    {
+      "type": "29",
+      "title": "女生小说",
+      "image": "",
+      "book_count": 5171
+    }
+  ]
+}

@@ -2,11 +2,22 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    StyleSheet, Image, TextInput, TouchableOpacity,
+    StyleSheet,
+    Image,
+    TextInput,
+    TouchableOpacity,
+    Platform,
 } from "react-native";
 
 import {Dimensions} from 'react-native'
 const { width, height } = Dimensions.get("window");
+
+let NavBarHeight = 0;
+if (Platform.OS === "ios"){
+    NavBarHeight = 80
+}else if (Platform.OS === "android"){
+    NavBarHeight = 50
+}
 
 class BookshelfPage extends Component {
     render() {
@@ -51,6 +62,7 @@ class BookshelfPage extends Component {
                     <View style={{flex:1}}></View>
                     <View style={{flex:1}}></View>
                 </View>
+                <View style={{width:width, height:height - 140 - NavBarHeight, backgroundColor: "#f00"}}></View>
             </View>
         );
     }

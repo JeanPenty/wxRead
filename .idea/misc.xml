@@ -22,4 +22,7 @@
     <option name="FILTER_MARKED_AS_FIXED" value="false" />
     <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="FLOW" />
+  </component>
 </project>
