@@ -88,7 +88,99 @@ class ClassifyPage extends Component {
     }
 
     onClickCard(item){
-        alert(item.title)
+        //alert(item.title)
+        this.props.navigation.navigate("classify_child", {item})
+        switch (item.title){
+            case "玄幻精品":{
+                //TODO:
+            }break;
+            case "政治军事":{
+                //TODO:
+            }break;
+            case "精品小说":{
+                //TODO:
+            }break;
+            case "会员专享":{
+                //TODO:
+            }break;
+            case "文学":{
+                //TODO:
+            }break;
+            case "历史":{
+                //TODO:
+            }break;
+            case "经济理财":{
+                //TODO:
+            }break;
+            case "社会小说":{
+                //TODO:
+            }break;
+            case "悬疑推理":{
+                //TODO:
+            }break;
+            case "哲学宗教":{
+                //TODO:
+            }break;
+            case "心理":{
+                //TODO:
+            }break;
+            case "影视原著":{
+                //TODO:
+            }break;
+            case "社会文化":{
+                //TODO:
+            }break;
+            case "人物传记":{
+                //TODO:
+            }break;
+            case "情感小说":{
+                //TODO:
+            }break;
+            case "个人成长":{
+                //TODO:
+            }break;
+            case "世界名著":{
+                //TODO:
+            }break;
+            case "生活百科":{
+                //TODO:
+            }break;
+            case "科幻经典":{
+                //TODO:
+            }break;
+            case "医学健康":{
+                //TODO:
+            }break;
+            case "教育学习":{
+                //TODO:
+            }break;
+            case "计算机":{
+                //TODO:
+            }break;
+            case "科学科技":{
+                //TODO:
+            }break;
+            case "艺术":{
+                //TODO:
+            }break;
+            case "童书":{
+                //TODO:
+            }break;
+            case "期刊专栏":{
+                //TODO:
+            }break;
+            case "原版书":{
+                //TODO:
+            }break;
+            case "男生小说":{
+                //TODO:
+            }break;
+            case "女生小说":{
+                //TODO:
+            }break;
+            default:
+                break;
+        }
     }
 }
 
