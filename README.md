@@ -35,6 +35,14 @@ npm install @react-navigation/bottom-tabs或者yarn add @react-navigation/bottom
 
 npm install react-native-shadow-cards或者yarn add react-native-shadow-cards安装Card支持
 
+使用顶部导航栏
+
+yarn add @react-navigation/material-top-tabs react-native-tab-view 或者 npm install @react-navigation/material-top-tabs react-native-tab-view
+
+添加expo支持
+
+expo install react-native-pager-view
+
 
 
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/179344048-6a87f2e2-fcac-422f-a74c-2a4454dbd110.png">
