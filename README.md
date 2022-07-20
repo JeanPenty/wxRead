@@ -2,6 +2,7 @@
 使用React-Native技术，模仿微信阅读开发
 
 搭建环境
+
 参考：https://juejin.cn/post/6854573221908332551
 1、安装 expo-cli：npm install expo-cli --global
 2、创建项目：expo init my-new-project 会有两类模板让你选择：托管工作流，裸露工作流。
