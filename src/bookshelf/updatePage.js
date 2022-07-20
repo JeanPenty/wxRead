@@ -8,7 +8,7 @@ import {
     Image,
     ImageBackground,
     Button,
-    FlatList, TextInput
+    FlatList, TextInput, ScrollView
 } from "react-native";
 
 import {Dimensions} from 'react-native'
@@ -17,11 +17,78 @@ const { width, height } = Dimensions.get("window");
 import {LinearGradient} from 'expo-linear-gradient';
 import {Card} from 'react-native-shadow-cards';
 
+const List = require("./testData/update.json")
+
 class UpdatePage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            booksData:List.data,
+        }
+    }
+    renderBooks(index, item){
+        return (
+            <Card
+                elevation={2}
+                cornerRadius={5}
+                opacity={0.2}
+                style={{width: 110,
+                    height:160,
+                    display:"flex",
+                    marginTop:20,
+                }}>
+                <TouchableOpacity
+                    //onPress={this.onClickCard.bind(this, item)}
+                    style={{flex:1, display: "flex"}}>
+                    <View style={{flex:4, display: "flex"}}>
+                        <ImageBackground
+                            source={require("../../assets/classifyCover/yishu.jpeg")}
+                            style={{width:110, height:130, display: "flex"}}
+                        >
+                            <View style={{flex:1, alignItems: "flex-end"}}>
+                                {
+                                    item.update
+                                        ? <Text style={{color:"#fff", backgroundColor: "#f00", fontSize:12, marginLeft:5, marginBottom:5}}>更新</Text>
+                                        : <Text></Text>
+                                }
+                            </View>
+                            <View style={{flex:4}}></View>
+                        </ImageBackground>
+                    </View>
+                    <View style={{flex:1, alignItems: "center", justifyContent: "center"}}>
+                        <Text
+                            ellipsizeMode={"tail"}
+                            numberOfLines={1}
+                            style={{fontSize:14, marginLeft:10, marginRight:10, textAlign:"center"}}
+                        >{(item.name)}</Text>
+                    </View>
+                </TouchableOpacity>
+            </Card>
+        );
+    }
+
     render() {
         return (
             <View style={styles.body}>
-                <Text>UpdatePage</Text>
+                <ScrollView
+                    showsHorizontalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}
+                >
+                    <View
+                        style={{flex:1,
+                            flexDirection:"row",
+                            display: "flex",
+                            flexWrap:"wrap",
+                            justifyContent:"space-between",
+                            marginBottom:300,
+                            marginLeft:10,
+                            marginRight:10,
+                        }}
+                    >
+                        {this.state.booksData.map((value, index) => this.renderBooks(index, value))}
+                    </View>
+                </ScrollView>
             </View>
         );
     }

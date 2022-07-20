@@ -28,7 +28,6 @@ class DefaultPage extends Component {
         }
     }
 
-
     renderBooks(index, item){
         return (
             <Card
