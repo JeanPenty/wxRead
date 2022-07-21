@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "title": "体验卡可读",
+      "book_count": 44,
+      "image": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "付费会员卡可读",
+      "book_count": 1,
+      "image": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "按章购买",
+      "book_count": 45,
+      "image": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "已购买",
+      "book_count": 263,
+      "image": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "导入书籍",
+      "book_count": 3,
+      "image": "",
+      "image2": "",
+      "image3": ""
+    }
+  ]
+}

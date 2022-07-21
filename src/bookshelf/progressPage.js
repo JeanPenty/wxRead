@@ -91,6 +91,9 @@ class ProgressPage extends Component {
                         }}
                     >
                         {this.state.progressData.map((value, index) => this.renderProgressClassify(index, value))}
+                        <View style={{width:width, height:30, marginTop:30, alignItems: "center", justifyContent: "center"}}>
+                            <Text style={{color:"#00000065"}}>361本公开阅读 · 3本私密阅读</Text>
+                        </View>
                     </View>
                 </ScrollView>
             </View>
