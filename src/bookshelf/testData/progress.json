@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "title": "尚未阅读",
+      "count": 294,
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "刚开始读",
+      "count": 19,
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "正在阅读",
+      "count": 41,
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "即将读完",
+      "count": 6,
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    },
+    {
+      "title": "已读完",
+      "count": 4,
+      "image1": "",
+      "image2": "",
+      "image3": ""
+    }
+  ]
+}

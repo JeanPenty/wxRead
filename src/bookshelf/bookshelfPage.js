@@ -21,7 +21,7 @@ const Tab = createMaterialTopTabNavigator();
 
 import DefaultPage from "./defaultPage";
 import UpdatePage from "./updatePage";
-import ProcessPage from "./processPage";
+import ProgressPage from "./progressPage";
 import RecommendPage from "./recommendPage";
 import ClassifyPage from "./classifyPage";
 import PayPage from "./payPage";
@@ -41,12 +41,12 @@ function BookShelfTabs() {
                 tabBarInactiveTintColor:"#00000085",
             }}
         >
-            <Tab.Screen name='book_shelf' options={{title:'默认'}} component={DefaultPage}></Tab.Screen>
-            <Tab.Screen name='book_list' options={{title:'更新'}} component={UpdatePage}></Tab.Screen>
-            <Tab.Screen name='book_shelf1' options={{title:'进度'}} component={ProcessPage}></Tab.Screen>
-            <Tab.Screen name='book_list1' options={{title:'推荐值'}} component={RecommendPage}></Tab.Screen>
-            <Tab.Screen name='book_shelf2' options={{title:'分类'}} component={ClassifyPage}></Tab.Screen>
-            <Tab.Screen name='book_list2' options={{title:'付费'}} component={PayPage}></Tab.Screen>
+            <Tab.Screen name='book_default' options={{title:'默认'}} component={DefaultPage}></Tab.Screen>
+            <Tab.Screen name='book_update' options={{title:'更新'}} component={UpdatePage}></Tab.Screen>
+            <Tab.Screen name='book_progress' options={{title:'进度'}} component={ProgressPage}></Tab.Screen>
+            <Tab.Screen name='book_recommend' options={{title:'推荐值'}} component={RecommendPage}></Tab.Screen>
+            <Tab.Screen name='book_classify' options={{title:'分类'}} component={ClassifyPage}></Tab.Screen>
+            <Tab.Screen name='book_pay' options={{title:'付费'}} component={PayPage}></Tab.Screen>
         </Tab.Navigator>
     );
 };
