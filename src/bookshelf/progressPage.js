@@ -87,7 +87,7 @@ class ProgressPage extends Component {
                             display: "flex",
                             flexWrap:'wrap',
                             //justifyContent:"space-between",
-                            marginBottom:300,
+                            marginBottom:400,
                         }}
                     >
                         {this.state.progressData.map((value, index) => this.renderProgressClassify(index, value))}

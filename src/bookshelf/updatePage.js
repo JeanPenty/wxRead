@@ -81,7 +81,7 @@ class UpdatePage extends Component {
                             display: "flex",
                             flexWrap:"wrap",
                             justifyContent:"space-between",
-                            marginBottom:300,
+                            marginBottom:400,
                             marginLeft:10,
                             marginRight:10,
                         }}

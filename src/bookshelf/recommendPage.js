@@ -177,7 +177,7 @@ class RecommendPage extends Component {
                             display: "flex",
                             flexWrap:"wrap",
                             //justifyContent:"space-between",
-                            marginBottom:300,
+                            marginBottom:400,
                         }}
                     >
                         {this.state.recommendData.map((value, index) => this.renderRecommend(index, value))}
