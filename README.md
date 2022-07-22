@@ -43,10 +43,13 @@ yarn add @react-navigation/material-top-tabs react-native-tab-view 或者 npm in
 
 expo install react-native-pager-view
 
+使用react-native-pager-view实现翻页
+
+yarn add react-native-pager-view
 
 
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/179344048-6a87f2e2-fcac-422f-a74c-2a4454dbd110.png">
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/179434050-208c5b36-4005-4db2-b59d-51cf6cf86032.png">
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/179445904-7f26715c-dbc8-40e0-bb66-41912af26323.png">
 <img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/179945974-95c74a0c-4231-4695-9647-0eff03c7f9b0.png">
-
+<img width="364" alt="image" src="https://user-images.githubusercontent.com/20986192/180350858-ff4fd736-fcf3-4004-9aa5-bac3f4edf15e.png">
