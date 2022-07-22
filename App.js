@@ -35,6 +35,8 @@ import MineNotePage from "./src/mine/mineNotePage";
 import MineReadRecordPage from "./src/mine/mineReadRecordPage";
 
 import ClassifyChildPage from "./src/read/classifyChildPages/classifyChildPage";
+
+import ReadBookPage from "./src/readBookPage";
 function Home() {
     return (
         <AppNavigator/>
@@ -151,6 +153,12 @@ export default function App() {
               }}/>
 
               <Stack.Screen name="classify_child" component={ClassifyChildPage} options={{
+                  //title:"阅读记录和订阅",
+                  //headerBackTitle:'返回',
+                  headerShown:false,
+              }}/>
+
+              <Stack.Screen name="read_book" component={ReadBookPage} options={{
                   //title:"阅读记录和订阅",
                   //headerBackTitle:'返回',
                   headerShown:false,

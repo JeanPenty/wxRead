@@ -40,7 +40,7 @@ class DefaultPage extends Component {
                     marginTop:20,
                 }}>
                 <TouchableOpacity
-                    //onPress={this.onClickCard.bind(this, item)}
+                    onPress={this.onClickCard.bind(this, item)}
                     style={{flex:1, display: "flex"}}>
                     <View style={{flex:4, display: "flex"}}>
                         <ImageBackground
@@ -95,6 +95,11 @@ class DefaultPage extends Component {
                 </ScrollView>
             </View>
         );
+    }
+
+    onClickCard(item){
+        //打开读书页面，并将图书信息通过路由传递过去
+        this.props.navigation.navigate("read_book", {item})
     }
 }
 
