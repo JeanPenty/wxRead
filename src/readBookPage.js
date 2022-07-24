@@ -8,6 +8,7 @@ import {
     Image,
     ImageBackground,
     Button,
+    StatusBar,
     FlatList, TextInput
 } from "react-native";
 
@@ -28,7 +29,7 @@ class ReadBookPage extends Component {
         //alert(route.params.item.title);
 
         this.state = {
-            isUseBG:true,
+            isUseBG:false,
             bgImg:"",
             bgColor:"",
             chapters:"第1章 这是一个测试",
@@ -82,6 +83,8 @@ class ReadBookPage extends Component {
                         "\n"
                 }
             ],
+
+            hideStatusBar:true,
         }
 
     }
@@ -91,7 +94,7 @@ class ReadBookPage extends Component {
             <View style={{}}>
                 <Text
                     selectable={true}
-                    style={{fontSize:20, color:"#00000065", letterSpacing:1, lineHeight:30}}
+                    style={{fontSize:20, color:"rgba(0,0,0,0.85)", letterSpacing:1, lineHeight:30}}
                 >{(value.content)}</Text>
             </View>
         );
@@ -100,14 +103,24 @@ class ReadBookPage extends Component {
     render() {
         return (
             <View style={styles.body}>
+                <StatusBar hidden={(this.state.hideStatusBar)}/>
                 {
                     this.state.isUseBG ?
                         <ImageBackground
                             source={require("../assets/readBG/default.webp")}
-                            opacity={0.2}
+                            opacity={0.4}
                             style={{width:width, height:height}}
                         >
-                            <View style={{flex:1}}>
+                            <TouchableOpacity
+                                onPress={()=>{
+                                    if (this.state.hideStatusBar){
+                                        this.setState({hideStatusBar:false})
+                                    }else {
+                                        this.setState({hideStatusBar:true})
+                                    }
+                                }}
+                                activeOpacity={1}
+                                style={{flex:1}}>
                                 <View style={{width:width, height:80}}>
                                     <View style={{width:width, height:50}}></View>
                                     <View style={{width:width, height:30, justifyContent:"center"}}>
@@ -122,10 +135,19 @@ class ReadBookPage extends Component {
                                 >
                                     {this.state.bookData.map((value, index) => this.renderBookData(index, value))}
                                 </PagerView>
-                            </View>
+                            </TouchableOpacity>
                         </ImageBackground>
                         :
-                        <View style={{flex:1}}>
+                        <TouchableOpacity
+                            onPress={()=>{
+                                if (this.state.hideStatusBar){
+                                    this.setState({hideStatusBar:false})
+                                }else {
+                                    this.setState({hideStatusBar:true})
+                                }
+                            }}
+                            activeOpacity={1.0}
+                            style={{flex:1}}>
                             <View style={{width:width, height:80}}>
                                 <View style={{width:width, height:50}}></View>
                                 <View style={{width:width, height:30, justifyContent:"center"}}>
@@ -140,10 +162,68 @@ class ReadBookPage extends Component {
                             >
                                 {this.state.bookData.map((value, index) => this.renderBookData(index, value))}
                             </PagerView>
-                        </View>
+                        </TouchableOpacity>
                 }
+
+                {this._renderTop()}
+                {this._renderBottom()}
             </View>
         );
+    }
+
+    _renderTop = () =>{
+        if (this.state.hideStatusBar === false){
+            return (
+                <View style={{height:90, width:width, backgroundColor: "#f3efd2", position: "absolute", display: "flex", borderBottomWidth:1, borderColor:"#00000010"}}>
+                    <View style={{flex:1}}></View>
+                    <View style={{flex:1, flexDirection:"row", display: "flex"}}>
+                        <View style={{flex:1, justifyContent:"center"}}>
+                            <TouchableOpacity
+                                onPress={()=>{this.props.navigation.goBack()}}
+                                style={{marginLeft:15}}
+                            >
+                                <Image source={require("../assets/icons/back.png")} style={{width:12, height:20}}></Image>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{flex:4, flexDirection:"row", alignItems:"center", justifyContent:"flex-end", marginRight:15}}>
+                            <TouchableOpacity
+                                style={{marginRight:25}}
+                            >
+                                <Image source={require("../assets/icons/buy.png")}  style={{width:24, height:24}}></Image>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{marginRight:25}}
+                            >
+                                <Image source={require("../assets/icons/read_shelf.png")}  style={{width:24, height:24}}></Image>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{marginRight:25}}
+                            >
+                                <Image source={require("../assets/icons/buy.png")}  style={{width:24, height:24}}></Image>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{marginRight:25}}
+                            >
+                                <Image source={require("../assets/icons/share.png")}  style={{width:24, height:24}}></Image>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={{}}
+                            >
+                                <Image source={require("../assets/icons/more.png")}  style={{width:24, height:24}}></Image>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            );
+        }
+    }
+
+    _renderBottom = () =>{
+        if (this.state.hideStatusBar === false){
+            return (
+                <View style={{top:height - 80, height:100, width:width, position: "absolute", backgroundColor: "#f3efd2"}}></View>
+            );
+        }
     }
 }
 
@@ -154,7 +234,7 @@ const styles = StyleSheet.create({
     body: {
         width: width,
         height: height,
-        backgroundColor:"#00000010",
+        backgroundColor:"#f3efd255",
         display:"flex",
     },
 })
