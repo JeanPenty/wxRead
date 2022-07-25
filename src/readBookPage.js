@@ -112,7 +112,7 @@ class ReadBookPage extends Component {
                             style={{width:width, height:height}}
                         >
                             <TouchableOpacity
-                                onPress={()=>{
+                                onLongPress={()=>{
                                     if (this.state.hideStatusBar){
                                         this.setState({hideStatusBar:false})
                                     }else {
@@ -139,7 +139,7 @@ class ReadBookPage extends Component {
                         </ImageBackground>
                         :
                         <TouchableOpacity
-                            onPress={()=>{
+                            onLongPress={()=>{
                                 if (this.state.hideStatusBar){
                                     this.setState({hideStatusBar:false})
                                 }else {
@@ -167,6 +167,7 @@ class ReadBookPage extends Component {
 
                 {this._renderTop()}
                 {this._renderBottom()}
+                {this._renderBottomBtb()}
             </View>
         );
     }
@@ -222,6 +223,24 @@ class ReadBookPage extends Component {
         if (this.state.hideStatusBar === false){
             return (
                 <View style={{top:height - 80, height:100, width:width, position: "absolute", backgroundColor: "#f3efd2"}}></View>
+            );
+        }
+    }
+    _renderBottomBtb = () =>{
+        if (this.state.hideStatusBar === false){
+            return (
+                <View style={{top:height - 160, height:80, width:width, position: "absolute",  display: "flex", flexDirection:"row", alignItems:"center", justifyContent:"flex-end"}}>
+                    <TouchableOpacity
+                        style={{width:60, height:60, borderRadius:30, backgroundColor: "#000000", marginRight:15, alignItems:"center", justifyContent:"center"}}
+                    >
+                        <Image source={require("../assets/icons/quanzi_w.png")} style={{width:40, height:40}}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        style={{width:60, height:60, borderRadius:30, backgroundColor: "#000000", marginRight:15, alignItems:"center", justifyContent:"center"}}
+                    >
+                        <Image source={require("../assets/icons/listen_book.png")} style={{width:40, height:40}}></Image>
+                    </TouchableOpacity>
+                </View>
             );
         }
     }
