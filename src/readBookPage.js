@@ -227,6 +227,7 @@ class ReadBookPage extends Component {
         }
     }
     _renderBottomBtb = () =>{
+        //
         if (this.state.hideStatusBar === false){
             return (
                 <View style={{top:height - 160, height:80, width:width, position: "absolute",  display: "flex", flexDirection:"row", alignItems:"center", justifyContent:"flex-end"}}>
